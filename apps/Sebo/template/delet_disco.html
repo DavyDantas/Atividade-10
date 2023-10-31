@@ -1,0 +1,14 @@
+{% extends  'base_lista_discos.html' %}
+
+{% block main %}
+
+<div class="lista-discos">
+    <form method="post">
+        {% csrf_token %}
+        <p>Você deseja exluir o disco ?</p>
+        <input type="submit" value="Sim" name="" id="">
+        <button><a href="{% url 'listar_discos' %}">Cancelar</a></button>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends  'base_lista_discos.html' %}
+
+{% block main %}
+
+<div class="lista-discos">
+    <form action="{% url 'add_disco' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Salvar</button>
+    </form>
+</div>
+
+{% endblock %}

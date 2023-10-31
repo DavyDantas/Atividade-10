@@ -1,0 +1,17 @@
+{% extends  'base_lista_discos.html' %}
+{% load static %}
+
+{% block main %}
+
+<div class="lista-discos">
+    <h2>{{disco}}</h2>
+    <p>Descrição: {{disco.descricao}}</p>
+    <p>Selo Fonografico: {{disco.selo_fonografico}}</p>
+    <p>Ano: {{disco.ano}}</p>
+    <p>País: {{disco.pais}}</p>
+    <p>Genero: {{disco.genero}}</p>
+    <p>Quantidade: {{disco.quantidade}}</p>
+
+</div>
+
+{% endblock %}

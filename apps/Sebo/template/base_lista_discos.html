@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Discos</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<section>
+{% block main %}
+    <h1>Discos Cadastrados</h1>
+
+<div class="lista-discos">
+
+        <table>
+            <tr><td>Nome</td><td>Selo Fonografico</td><td>Quantidade</td></tr>
+
+            {% for disco in discos %}
+            <tr><td>{{disco.nome}}</td><td>{{disco.selo_fonografico}}</td><td>{{disco.quantidade}}</td>
+                <td><button><a href="{% url 'detalhe_disco' disco.pk %}">Visualizar</a></button></td>
+                <td><button><a href="{% url 'edit_disco' disco.pk %}">Editar</a></button></td><td><button><a href="{% url 'delet_disco' disco.pk %}">Excluir</a></button></td></tr>
+            {% endfor %}
+
+        </table>
+</div>
+
+    <button><a href="{% url 'add_disco' %}">Adicionar Disco</a></button>
+
+{% endblock %}
+</section>
+
+</body>
+</html>
